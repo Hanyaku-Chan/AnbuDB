@@ -2,7 +2,7 @@ const net = require('net');
 
 class Database {
 
-  constructor(host = 'localhost', port = 8000, password) {
+  constructor(host, port, password) {
 
     this.host = host;
 
