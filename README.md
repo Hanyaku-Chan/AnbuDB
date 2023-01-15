@@ -51,7 +51,7 @@ db.delete('mykey').then(console.log);
 The library makes use of Promises, so you can use the .then() method to handle the result of the operations.
 
 ### Security
-The password is sent in plaintext. Dont use this fkr important stuff. I'll be changing that in a few updates.
+The password is sent in plaintext. Dont use this for important stuff. I'll be changing that in a few updates.
 
 ### License
 This project is licensed under the GNU AGPL 3 License - see the LICENSE file for details.
