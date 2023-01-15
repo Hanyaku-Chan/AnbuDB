@@ -1,4 +1,4 @@
-const Database = require('./database');
+const Database = require('./anbu-library');
 
 const db = new Database('localhost', 8000, 'password');
 
