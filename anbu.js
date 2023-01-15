@@ -17,16 +17,19 @@ const load = () => {
 };
 
 const get = (key) => {
+  console.log("Get key: " + key);
   return database[key];
 };
 
 const set = (key, value) => {
   database[key] = value;
+  console.log("Set key: " + key + " to value: " + value);
   save();
 };
 
 const remove = (key) => {
   delete database[key];
+  console.log("Removed key: " + key);
   save();
 };
 
@@ -35,13 +38,12 @@ load();
 const server = net.createServer((socket) => {
   socket.on('data', (data) => {
     const message = data.toString().trim();
-    const [auth, key, value] = message.split(':');
+    const [auth, method, key, value] = message.split(':');
     if (auth !== password) {
         socket.write(JSON.stringify({ error: 'Invalid password' }));
         socket.end();
         return;
     }
-    const [method, key, value] = message.split(':');
 
     switch (method) {
       case 'GET':
@@ -65,4 +67,3 @@ const server = net.createServer((socket) => {
 server.listen(8000, () => {
   console.log('Server listening on port 8000');
 });
-
