@@ -1,4 +1,4 @@
-# TCP JSON Database
+# AnbuDB
 
 This is a simple TCP server that stores key-value pairs in a JSON file and a library that connects to the server and allows to perform GET, POST and DELETE operations.
 
@@ -51,7 +51,7 @@ db.delete('mykey').then(console.log);
 The library makes use of Promises, so you can use the .then() method to handle the result of the operations.
 
 ### Security
-The password is sent in plaintext, it is recommended to use a secure transport protocol like HTTPS or a secure communication library like SSH.
+The password is sent in plaintext. Dont use this fkr important stuff. I'll be changing that in a few updates.
 
 ### License
 This project is licensed under the GNU AGPL 3 License - see the LICENSE file for details.
